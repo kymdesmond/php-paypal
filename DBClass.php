@@ -6,8 +6,8 @@
 class DB{
     private $dbHost     = "localhost";
     private $dbUsername = "root"; //change
-    private $dbPassword = "secret"; //change
-    private $dbName     = "products"; //change to match your db name
+    private $dbPassword = ""; //change
+    private $dbName     = "stkpush_example"; //change to match your db name
     
     public function __construct(){
         if(!isset($this->db)){

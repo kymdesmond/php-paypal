@@ -7,7 +7,7 @@ CREATE TABLE `products` (
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `payments` (
+CREATE TABLE `paypal_payments` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `product_id` int(10) NOT NULL,
  `txn_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -18,6 +18,18 @@ CREATE TABLE `payments` (
  `payer_email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
  `payer_country` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
  `payment_status` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+ `created` datetime NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `mpesa_payments` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `MerchantRequestID` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `CheckoutRequestID` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `MpesaReceiptNumber` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `Amount` float(10, 2) NOT NULL,
+ `TransactionDate` date NOT NULL,
+ `PhoneNumber` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
  `created` datetime NOT NULL,
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

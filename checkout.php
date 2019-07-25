@@ -1,4 +1,5 @@
 <?php
+include 'layout/layout_head.php';
 // Redirect to the home page if id parameter not found in URL
 if(empty($_GET['id'])){
     header("Location: index.php");
@@ -11,6 +12,10 @@ $db = new DB;
 // Include and initialize paypal class
 include 'PaypalExpressClass.php';
 $paypal = new PaypalExpress;
+
+//Include and initialize mpesa class
+include 'Mpesa.php';
+$mpesa = new Mpesa;
 
 // Get product ID from URL
 $productID = $_GET['id'];
@@ -28,14 +33,37 @@ if(empty($productData)){
 }
 ?>
 
-<div class="item">
-    <!-- Product details -->
-    <img src="images/<?php echo $productData['image']; ?>"/>
-    <p>Name: <?php echo $productData['name']; ?></p>
-    <p>Price: <?php echo $productData['price']; ?></p>
+<div class="container" align="center">
+<div class="card">
+<div class="col-md-8">
+<div class="">
+<h2 class="card-title">Checkout</h2>
+</div>
+<div class="card-body">
+<form action="process-mpesa-payment.php" method="post">
+  <div class="form-group">
+     <!-- Product details -->
+    <h5>Name: <?php echo $productData['name']; ?></h5>
+    <h6>Price: <?php echo $productData['price']; ?></h6>
     
-    <!-- Checkout button -->
+    <!-- Checkout buttons -->
+    <!-- checkout with MPesa -->
+    <input type="hidden" name="price" value="<?php echo $productData['price']?>">
+    <label for="msisdn">Mpesa Number</label>
+    <input class="form-control" type="number" name="msisdn" min="12" placeholder="254712345678">
+    <input class="btn btn-success" type="submit">
+
+    <!-- checkout with paypal -->
     <div id="paypal-button"></div>
+
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class="item">
+
 	<script src="https://www.paypalobjects.com/api/checkout.js"></script>
 	<!--
 JavaScript code to render PayPal checkout button
@@ -81,3 +109,7 @@ paypal.Button.render({
 }, '#paypal-button');
 </script>
 </div>
+<?php
+//footer
+include 'layout/layout_footer.php';
+?>
