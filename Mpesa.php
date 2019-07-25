@@ -12,7 +12,7 @@ define('INITIATOR_NAME', 'apitest486');
 define('SECURITY_CREDENTIAL', 'VJd+owOOyHQZa1VzkHA4nuR/EcXJ1yDTEJBF0xqlfAdxKfNkTpuSfuaEcLOEueRyssQVIODk9rRJV1aGmHg0E5GD23GgHO70Lf/SLy18DWzseyPep/6+HDY2fdsn51Af6Vu3G7sAYGVWyaCcx2zcKHVc+FhP5Wk8EuzWGT/MXJXZRDPFzvUnJQOheuCBDxvpvRFK+7EdZjhUZQp62fBbwRTknfRitCpM4eGkPoAfOYdZnNBSi9pFjhFf6WRLqdGnQNVUDUpfDAEERPNB2ocjyoyJuMooAVk7xCzkQxSp7G/dpOzgdjL37KXWD5DkrWlWf8QJCtVA3BFFmW1D90kuHw==');
 define('B2C_COMMAND_ID', 'SalaryPayment');
 
-define('HOST', 'https://mpesa-apis.herokuapp.com');
+define('HOST', 'https://desmond-payments.herokuapp.com/');
 define('B2C_QUERY_TIMEOUT_URL', HOST.'/callback.php');
 define('B2C_RESULT_URL', HOST.'/callback.php');
 define('B2C_PARTY_A', '601486');
