@@ -12,17 +12,17 @@ define('INITIATOR_NAME', 'apitest486');
 define('SECURITY_CREDENTIAL', 'VJd+owOOyHQZa1VzkHA4nuR/EcXJ1yDTEJBF0xqlfAdxKfNkTpuSfuaEcLOEueRyssQVIODk9rRJV1aGmHg0E5GD23GgHO70Lf/SLy18DWzseyPep/6+HDY2fdsn51Af6Vu3G7sAYGVWyaCcx2zcKHVc+FhP5Wk8EuzWGT/MXJXZRDPFzvUnJQOheuCBDxvpvRFK+7EdZjhUZQp62fBbwRTknfRitCpM4eGkPoAfOYdZnNBSi9pFjhFf6WRLqdGnQNVUDUpfDAEERPNB2ocjyoyJuMooAVk7xCzkQxSp7G/dpOzgdjL37KXWD5DkrWlWf8QJCtVA3BFFmW1D90kuHw==');
 define('B2C_COMMAND_ID', 'SalaryPayment');
 
-define('HOST', 'http://0336402f.ngrok.io');
-define('B2C_QUERY_TIMEOUT_URL', HOST.'/stkpushdemo/callback.php');
-define('B2C_RESULT_URL', HOST.'/stkpushdemo/callback.php');
+define('HOST', 'https://mpesa-apis.herokuapp.com');
+define('B2C_QUERY_TIMEOUT_URL', HOST.'/callback.php');
+define('B2C_RESULT_URL', HOST.'/callback.php');
 define('B2C_PARTY_A', '601486');
 define('B2C_PARTY_B', '254708374149');
 // 254708374149
 define('SHORTCODE', '601486');
 define('C2B_COMMAND_ID', 'CustomerPayBillOnline');
-define('CallBackURL', HOST.'/stkpushdemo/callback.php');
-define('ValidationURL', HOST.'/stkpushdemo/validation.php');
-define('ConfirmationURL', HOST.'/stkpushdemo/confirmation.php');
+define('CallBackURL', HOST.'/callback.php');
+define('ValidationURL', HOST.'/validation.php');
+define('ConfirmationURL', HOST.'/confirmation.php');
 define('LNM_PARTY_B', '174379');
 
 define('TRX_STATUS_COMMMAND_ID', 'TransactionStatusQuery');
